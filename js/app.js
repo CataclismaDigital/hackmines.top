@@ -39,6 +39,11 @@ const TAMANHO_MATRIZ = 5;
 // funÃ§Ã£o que gera o sinal
 function gerarSinal() {
 
+  var avisoDep = document.getElementById("avisodep");
+
+  if (avisoDep && getComputedStyle(avisoDep).display === "block") {
+    avisoDep.parentNode.removeChild(avisoDep);
+  }
 
   var botao = document.getElementById("botao-sinal");
   botao.innerHTML = "Aguarde 30 segundos...";
@@ -90,7 +95,7 @@ var cronometro = setInterval(function() {
   botao.innerHTML = "Aguarde " + segundos + " segundos...";
   if (segundos == 0) {
     clearInterval(cronometro);
-    botao.innerHTML = "HACKEAR SINAL!";
+    botao.innerHTML = "HACKEAR SINAL";
     botao.style.backgroundColor = "#ffb43a";
     botao.disabled = false;
   }
