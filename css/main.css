@@ -756,11 +756,11 @@ header {
 
 
 iframe {
-    width: 598px;
+    width: 590px;
     height: 600px;
     display: block;
     margin: auto;
-    max-width: 100%;
+    max-width: 590px;
     border: none;
     border-radius: 10px;
     box-shadow: 0px 5px 50px black;
@@ -772,7 +772,7 @@ iframe {
   color: #fff; /* cĆ³digo da cor branca */
 }
 
-@media only screen and (max-width: 598px) {
+@media only screen and (max-width: 600px) {
     #quadrados {
         display: flex;
         flex-wrap: wrap;
