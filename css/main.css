@@ -811,7 +811,7 @@ iframe {
 
 
 
-#botao-sinal {
+#-sinal {
     display: block;
     margin: auto;
   
@@ -880,9 +880,9 @@ iframe {
   text-align: center;
   text-transform: uppercase;
   color: #2d2e37;
-  background-color: #ffb43a;
+  background-color: #15e55d;
   border: none;
-  border-radius: 5px;
+  border-radius: 25px;
   cursor: pointer;
 }
 
