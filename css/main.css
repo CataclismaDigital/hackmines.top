@@ -812,9 +812,8 @@ iframe {
 
 
 #botao-sinal {
-    display: block;
-    margin: auto;
-  
+  display: block;
+  margin: auto;
   padding: 12px 64px;
   font-size: 16px;
   font-weight: 600;
