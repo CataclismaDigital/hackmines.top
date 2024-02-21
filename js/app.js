@@ -5,7 +5,7 @@
 // constantes
 const IMAGENS = ['bomba.png', 'diamante.png'];
 const QUANT_BOMBAS = 20;
-const QUANT_DIAMANTES = 4;
+const QUANT_DIAMANTES = 22;
 
 // variÃ¡veis globais
 var estrelasSelecionadas = 3;
