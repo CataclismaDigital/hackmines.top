@@ -3,9 +3,9 @@
 
 
 // constantes
-const IMAGENS = ['bomba.png', 'diamante.png'];
+var IMAGENS = ['bomba.png', 'diamante.png'];
 const QUANT_BOMBAS = 20;
-const QUANT_DIAMANTES = 22;
+var QUANT_DIAMANTES = 4;
 
 // variÃ¡veis globais
 var estrelasSelecionadas = 3;
@@ -102,21 +102,64 @@ var cronometro = setInterval(function() {
 }, 1000);
 }
 
-
-
-
-
-var iframeAberto = false;
-var botaoIframe = document.getElementById("meu-iframe");
-
-function toggleIframe() {
-var iframe = document.getElementById("meu-iframe");
-var botao = document.getElementById("botao-iframe");
-if (iframe.style.display === "none") {
-  iframe.style.display = "block";
-  botao.textContent = "Fechar Casa de Aposta";
-} else {
-  iframe.style.display = "none";
-  botao.textContent = "Abrir Casa de Aposta";
+function toggleDropdown() {
+  var dropdownContent = document.getElementById('drop-cont');
+  if (dropdownContent.style.display === 'none' || dropdownContent.style.display === '') {
+    dropdownContent.style.display = 'block';
+  } else {
+    dropdownContent.style.display = 'none';
+  }
 }
+
+function changeOption(optionText) {
+  document.getElementById('dropbtn').innerText = optionText;
+  document.getElementById('drop-cont').style.display = 'none';
+  segundos = 0;
 }
+
+function changeVar(optionValue) {
+  QUANT_DIAMANTES = optionValue; // Modifica a variável conforme necessário
+  console.log("Variável modificada: " + QUANT_DIAMANTES); // Exemplo: exibe a variável no console
+}
+
+
+let slideIndex = 0;
+let intervalId;
+
+function showSlides() {
+  const slides = document.querySelectorAll('.carousel-slide img');
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = 'none';
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {
+    slideIndex = 1;
+  }
+  slides[slideIndex - 1].style.display = 'block';
+}
+
+function prevSlide() {
+  clearInterval(intervalId); // Limpa o intervalo antes de mudar de slide
+  slideIndex--;
+  if (slideIndex < 1) {
+    slideIndex = document.querySelectorAll('.carousel-slide img').length;
+  }
+  showSlides();
+}
+
+function nextSlide() {
+  clearInterval(intervalId); // Limpa o intervalo antes de mudar de slide
+  slideIndex++;
+  if (slideIndex > document.querySelectorAll('.carousel-slide img').length) {
+    slideIndex = 1;
+  }
+  showSlides();
+}
+
+// Iniciar o carrossel automaticamente
+function startCarousel() {
+  intervalId = setInterval(showSlides, 2500);
+}
+
+// Iniciar o carrossel automaticamente na inicialização
+startCarousel();
